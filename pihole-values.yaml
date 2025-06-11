@@ -1,0 +1,14 @@
+serviceWeb:
+  type: ClusterIP
+  annotations: {}
+
+serviceDns:
+  type: LoadBalancer
+  annotations:
+    metallb.universe.tf/allow-shared-ip: pihole-svc
+
+dnsmasq:
+  customSettings:
+    - listen-address=0.0.0.0
+
+adminPassword: pihole-admin-password
